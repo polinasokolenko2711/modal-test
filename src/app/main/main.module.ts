@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 
-import { TestContentComponent } from '../main/components/test-content/test-content.component';
 import { ListOfPopupsComponent } from '../main/components/list-of-popups/list-of-popups.component';
 import { NotificationComponent } from '../main/components/notification/notification.component';
 import { UserFormComponent } from '../main/components/user-form/user-form.component';
@@ -12,7 +11,6 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 
 @NgModule({
   declarations: [
-    TestContentComponent,
     ListOfPopupsComponent,
     NotificationComponent,
     UserFormComponent,
@@ -20,7 +18,6 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     UserDetailsComponent
   ],
   entryComponents: [
-    TestContentComponent,
     NotificationComponent,
     UserFormComponent,
     UsersTableComponent,

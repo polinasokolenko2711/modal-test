@@ -1,4 +1,8 @@
-<table class="table">
+<div [ngStyle]="{'height': config.height? config.height: 'auto', width:config.width? config.width : 'auto'}">
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-danger" (click)="onClose()">X</button>
+  </div>
+  <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -16,3 +20,4 @@
       </tr>
     </tbody>
   </table>
+</div>

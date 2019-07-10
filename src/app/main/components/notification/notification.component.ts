@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalConfig } from 'src/app/shared/classes/modal-config';
+import { ModalRef } from 'src/app/shared/classes/modal-ref';
 
 @Component({
   selector: 'app-notification',
@@ -9,10 +10,15 @@ import { ModalConfig } from 'src/app/shared/classes/modal-config';
 export class NotificationComponent implements OnInit {
 
   constructor(
-    public config: ModalConfig, 
+    public config: ModalConfig,
+    private modalRef: ModalRef
   ) { }
 
   ngOnInit() {
+  }
+
+  onClose() {
+    this.modalRef.close();
   }
 
 }

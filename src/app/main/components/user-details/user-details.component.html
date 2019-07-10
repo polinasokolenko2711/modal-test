@@ -1,1 +1,8 @@
-<p>user-details works!</p>
+<div class="d-flex justify-content-between">
+    <h4 class="p-1">{{user.name}} {{user.lastname}}</h4>
+    <button class="btn btn-danger" (click)="onClose()">X</button>
+</div>
+<hr>
+<div>
+    <p>Email: {{user.email}}</p>
+</div>

@@ -29,6 +29,6 @@ export class ListOfPopupsComponent implements OnInit {
   }
 
   openTable() {
-    this.modalService.open(UsersTableComponent, { data: usersList });
+    this.modalService.open(UsersTableComponent, { data: usersList, width: '70vw', height: '45vh'});
   }
 }

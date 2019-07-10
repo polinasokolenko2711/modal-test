@@ -13,28 +13,7 @@
   .modal-container {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.8);
     background-color: white;
-    width: 400px;
     padding: 1rem;
     border-radius: .5rem;
     transition: width 1s linear 1500ms;
-  }
-  .animation {
-    visibility: hidden;
-  }
-  .animation {
-    animation-name: opacity;
-    -webkit-animation-name: opacity; 
-    animation-duration: .5s; 
-    -webkit-animation-duration: .5s;
-    animation-timing-function: ease-out; 
-    -webkit-animation-timing-function: ease-out; 
-    visibility: visible !important; 
-  }
-  @keyframes opacity{
-    0%{opacity:0}
-    100%{opacity:1}
-  }
-  @-webkit-keyframes opacity{
-    0%{opacity:0}
-    100%{opacity:1}
   }

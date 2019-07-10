@@ -49,7 +49,7 @@ export class ModalService {
 
   private removeModalComponentFromBody(dialogComponentRef: ComponentRef<ModalComponent>) {
     this.applicationRef.detachView(dialogComponentRef.hostView);
-    this.modalComponentRef.destroy();
+    this. modalComponentRef.destroy();
   }
 
 }

@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { ModalComponent } from './components/modal/modal.component';
 import { ModalConfig } from './classes/modal-config';
 
@@ -8,7 +11,9 @@ import { ModalConfig } from './classes/modal-config';
     ModalComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [ ModalConfig ],
   entryComponents: [ ModalComponent ],
