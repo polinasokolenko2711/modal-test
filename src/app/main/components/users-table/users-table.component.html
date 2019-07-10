@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i=index" (click)="onSelect(user)">
+        <th scope="row">{{i+1}}</th>
+        <th>{{user.name}}</th>
+        <td>{{user.lastname}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>

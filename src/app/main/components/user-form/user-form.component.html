@@ -1,0 +1,20 @@
+<div class="d-flex justify-content-end">
+    <button class="btn btn-danger" (click)="onClose()">X</button>
+</div>
+<hr>
+<form class="form">
+    <div class=" -2">
+        <div class="d-block">
+            <label for="userName" class="sr-only">Name</label>
+            <input [(ngModel)]="userName" class="form-control" name="userName" placeholder="Name" required>
+        </div>
+        <div class="d-block mt-4">
+            <label for="email" class="sr-only">Email</label>
+            <input class="form-control" id="email" placeholder="Email">
+        </div>
+    </div>
+    <hr>
+    <div class="d-flex justify-content-end">
+        <button type="submit" (click)="onClose()" class="btn btn-outlaner-success m-1">Confirm identity</button>
+    </div>
+</form>
