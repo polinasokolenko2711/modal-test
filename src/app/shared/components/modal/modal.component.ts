@@ -26,21 +26,22 @@ import {
   templateUrl: './modal.component.html',
   animations: [
     trigger('panelInOut', [
-      transition('void => *', [
-        style({ transform: 'translateY(100%)' }),
-        animate(400)
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('200ms', style({ opacity: 1 })),
       ]),
-      transition('* => void', [
-        animate(500, style({ transform: 'translateY(-100%)' }))
-      ])
+      transition(':leave', [
+        style({ opacity: 1 }),
+        animate('200ms', style({ opacity: 0 })),
+      ]),
     ])
   ],
   styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit, AfterViewInit, OnDestroy {
-  componentRef: ComponentRef<any>
-  childComponentType: Type<any>
-  @ViewChild('container', { read: ViewContainerRef, static: true }) container: ViewContainerRef;
+  componentRef: ComponentRef<any>;
+  childComponentType: Type<any>;
+  @ViewChild('container', { read: ViewContainerRef, static: false }) container: ViewContainerRef;
   @Injectable() data: any;
 
   private _onClose = new Subject<any>();
@@ -63,6 +64,7 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy {
       this.componentRef.destroy();
     }
   }
+
   ngAfterViewInit() {
     this.loadChildComponent(this.childComponentType);
     this.changeDetectorRef.detectChanges();
@@ -76,10 +78,6 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy {
     event.stopPropagation();
   }
 
-  private close() {
-    this._onClose.next();
-  }
-
   private loadChildComponent(componentType: any) {
     const componentFactory = this.componentFactoryResolver.resolveComponentFactory(componentType);
     this.container.clear();
@@ -88,3 +86,4 @@ export class ModalComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
 }
+

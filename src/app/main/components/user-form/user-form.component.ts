@@ -7,7 +7,8 @@ import { ModalRef } from 'src/app/shared/classes/modal-ref';
   styleUrls: ['./user-form.component.scss']
 })
 export class UserFormComponent implements OnInit {
-  userName: string;
+  name: string;
+  lastname: string;
 
   constructor(
     public modalRef: ModalRef
@@ -17,6 +18,14 @@ export class UserFormComponent implements OnInit {
   }
 
   onClose() {
-    this.modalRef.close(this.userName);
+    this.modalRef.close(this.setFullName());
+  }
+
+  setFullName() {
+    if (this.name && this.lastname) {
+      return this.name + ' ' + this.lastname;
+    } else {
+      return 'User';
+    }
   }
 }
